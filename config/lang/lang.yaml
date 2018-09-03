@@ -1,0 +1,6 @@
+#en-us: !include en-us.yaml
+#fr-fr: !include fr-fr.yaml
+en-us:
+  welcome: "Welcome %0 ! >0< "
+fr-fr:
+  welcome: "Bienvenue %0"
