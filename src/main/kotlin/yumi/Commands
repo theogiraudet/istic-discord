@@ -13,7 +13,7 @@ private val CommandList : HashMap<String, KFunction<*>> = HashMap()
 private var helpText : String = ""
 
 fun initializeCommand() {
-    for (member in COMMANDS::class.declaredMemberFunctions)
+    for (member in commands::class.declaredMemberFunctions)
         if (member.findAnnotation<Command>() != null)
             CommandList.put(member.findAnnotation<Command>()?.name ?: "", member)
     val list : MutableList<String> = mutableListOf()
@@ -28,7 +28,7 @@ class Listener : ListenerAdapter() {
        val message = event?.message?.contentRaw ?: return
         if(!message.startsWith(CHAR))  return
         val args : List<String> = message.split("\\s+".toRegex())
-        COMMANDS.callCommands(args[0].removeRange(0, 1), args.subList(1, args.size), event)
+        commands.callCommands(args[0].removeRange(0, 1), args.subList(1, args.size), event)
 
     }
 }
