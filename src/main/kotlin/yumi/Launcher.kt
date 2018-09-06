@@ -13,6 +13,7 @@ import java.awt.Color
 
 
 var logger = KotlinLogging.logger { }
+val commands = Commands()
 
 fun main(args: Array<String>) {
     val config = gatherConfig(args[0])
